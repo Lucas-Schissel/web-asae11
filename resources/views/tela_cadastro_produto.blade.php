@@ -7,9 +7,10 @@
 	</span>
 </div>
 
-<div class="text-center mt-5 p-5">
+<div class="mt-2 p-5">
 	<form method="post" action="{{ route('produto_add') }}">
 		@csrf
+		<h3>Digite um nome:</h3>
 		<input type="text" class="form-control" name="nome" placeholder="Nome">
 		<br>
 		<input type="submit" class="btn btn-success btn-lg btn-block" value="Confirmar">

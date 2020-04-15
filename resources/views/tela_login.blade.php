@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link rel="stylesheet" href="{{asset('css/t1.css')}}" type="text/css">
+	<link rel="stylesheet" href="{{asset('css/fontello.css')}}" type="text/css">
 
 </head>
 <body>
@@ -24,13 +25,20 @@
 					<br><br>
 					<input type="password" name="senha" placeholder="Senha..." required>
 					<br><br>
-					<input class="btn btn-success btn-lg" style="width:300px" type="submit"  value="Logar">
+					<button class="btn btn-success btn-lg" style="width:300px" type="submit">
+					 Logar
+					<i class="icon-login"></i>
+					</button>
 					<br><br>
 				</form>
 
-			<a class="btn btn-primary btn-lg" style="width:300px" href="{{ route('usuario_cadastro') }}">Cadastrar-se</a>
-
+				<a class="btn btn-primary btn-lg" style="width:300px" href="{{ route('usuario_cadastro') }}">
+				Cadastrar-se
+				<i class="icon-upload-cloud"></i>
+				</a>		
+					
 			</div>
+			
 			<div class="col-md-2 mt-2">
 				<!-- coluna vazia direita -->
 			</div>

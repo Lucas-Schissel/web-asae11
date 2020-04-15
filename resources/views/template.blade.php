@@ -5,17 +5,16 @@
 	<meta name= "viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel= "stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link rel="stylesheet" href="{{asset('css/template.css')}}" type="text/css">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-	  rel="stylesheet">
+	<link rel="stylesheet" href="{{asset('css/fontello.css')}}" type="text/css">
 </head>
 <body>
  <div class= "container-fluid">
      <div class= "row">
 
 			<nav class= "navbar-expand-lg navbar navbar-dark bg-dark w-100">
-				
-			  <button class= "navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-			  <span class="material-icons"></span>
+
+			  <button class= "navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" arina-label="Toggle navigation">
+			  <i class="icon-down-open"></i>
 			  </button>
 
 				<div class= "collapse navbar-collapse" id="navbarNav">
@@ -32,6 +31,7 @@
 							<div class= "dropdown-menu" aria-labelledby="dropdownMenuButton">
 								<a class= "dropdown-item" href="{{route('logout')}}"> 
 								Logout
+								<i class="icon-logout"></i>
 								</a>
 							</div>
 
@@ -43,6 +43,7 @@
 
 							<button class="btn btn-secondary" type="button" data-toggle="dropdown">
 								Clientes
+								<i class="icon-user-circle-o"></i>
 							</button>
 
 							<div class= "dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -63,11 +64,13 @@
 
 							<button class="btn btn-secondary" type="button" data-toggle="dropdown">
 								Vendas
+								<i class="icon-table"></i>
 							</button>
 
 							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 								<a class="dropdown-item" href="{{route('venda_cadastro')}}">
 								Vender
+								<i class="icon-cart-plus"></i>
 								</a>
 							</div>
 

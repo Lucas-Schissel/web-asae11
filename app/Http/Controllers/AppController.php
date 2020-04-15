@@ -7,9 +7,13 @@ use App\Cliente;
 
 class AppController extends Controller
 {
+	function menu(){
+		return view("resultado", ["mensagem" => "Bem Vindo"]);
+	}
+
     function tela_login(){
 		if (session()->has("login")){
-			return redirect()->route('listar');
+			return redirect()->route('menu');
 		}
 			return view('tela_login');
 
@@ -27,7 +31,7 @@ class AppController extends Controller
 			$variaveis = ["login" => $login];
 			session($variaveis);
 
-    		return redirect()->route('listar');
+    		return redirect()->route('menu');
     	} else {
 			return view("resultado", ["mensagem" => "Usuário ou senha inválidos. Tente cadastrar um usuario"]);
     	}
@@ -40,7 +44,7 @@ class AppController extends Controller
 
 	static function verifica(){
 		if (session()->has("login")){
-			return redirect()->route('listar');
+			return redirect()->route('menu');
 		}
 			return view('tela_login');
 		

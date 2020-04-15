@@ -34,7 +34,11 @@ Route::get('/tela_login', 'AppController@tela_login')
 Route::post('/login', 'AppController@login')
 	->name('logar');
 
-Route::get('/logout', 'AppController@logout')->name('logout');
+Route::get('/logout', 'AppController@logout')
+	->name('logout');
+
+Route::get('/menu', 'AppController@menu')
+	->name('menu');
 
 //Vendas
 

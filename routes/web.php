@@ -24,7 +24,7 @@ Route::get('/usuario/excluir/{id}', 'ClienteController@excluir')
 	->name('usuario_delete');
 
 Route::get('/usuario/listar', 'ClienteController@listar')
-	->name('listar');
+	->name('usuario_listar');
 
 //Login
 
@@ -50,3 +50,22 @@ Route::get('/venda/excluir/{id}', 'VendaController@excluir')
 Route::get('venda/cliente/{id}', 'VendaController@vendasPorCliente')
 	->name('vendas_cliente');
 
+//Produtos
+
+Route::get('/produto/cadastro', 'ProdutoController@telaCadastro')
+	->name('produto_cadastro');
+
+Route::get('/produto/alterar/{id}', 'ProdutoController@telaAlteracao')
+	->name('produto_update');
+	
+Route::post('/produto/adicionar', 'ProdutoController@adicionar')
+	->name('produto_add');
+
+Route::post('/produto/alterar/{id}', 'ProdutoController@alterar')
+	->name('produto_alterar');
+
+Route::get('/produto/excluir/{id}', 'ProdutoController@excluir')
+	->name('produto_delete');
+
+Route::get('/produto/listar', 'ProdutoController@listar')
+	->name('produto_listar');

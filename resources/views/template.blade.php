@@ -48,7 +48,7 @@
 							</button>
 
 							<div class= "dropdown-menu" aria-labelledby="dropdownMenuButton">
-								<a class= "dropdown-item" href="{{route('listar')}}">
+								<a class= "dropdown-item" href="{{route('usuario_listar')}}">
 								<i class="icon-th-list"></i>
 								Listar
 								</a>
@@ -74,6 +74,29 @@
 								<a class="dropdown-item" href="{{route('venda_cadastro')}}">
 								<i class="icon-cart-plus"></i>
 								Vender
+								</a>
+							</div>
+
+					 </div>
+					</li>
+
+					<li class ="nav-item">
+					 <div class="dropdown">
+
+							<button class="btn btn-secondary" type="button" data-toggle="dropdown">
+								Produtos
+								<i class="icon-tags"></i>
+							</button>
+
+							<div class= "dropdown-menu" aria-labelledby="dropdownMenuButton">
+								<a class= "dropdown-item" href="{{route('produto_listar')}}">
+								<i class="icon-th-list"></i>
+								Listar
+								</a>
+							<div class= "dropdown-divider"></div>
+								<a class= "dropdown-item" href="{{route('produto_cadastro')}}">
+								<i class="icon-pencil"></i>
+								Cadastrar								
 								</a>
 							</div>
 

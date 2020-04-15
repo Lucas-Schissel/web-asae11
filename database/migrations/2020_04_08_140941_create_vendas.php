@@ -19,7 +19,7 @@ class CreateVendas extends Migration
             $table->unsignedBigInteger('id_usuario');
             $table->timestamps();
 
-            $table->foreign('id_usuario')->references('id')->on('usuarios');
+            $table->foreign('id_usuario')->references('id')->on('clientes');
         });
     }
 

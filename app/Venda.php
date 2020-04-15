@@ -12,6 +12,7 @@ class Venda extends Model
     function usuario(){
     	return $this->belongsTo('App\Cliente', 'id_usuario', 'id');
     }
+
     function produto(){
     	return $this->belongsTo('App\Produto', 'id_produto', 'id');
     }

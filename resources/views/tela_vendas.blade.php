@@ -7,15 +7,27 @@
 	</span>
 </div>
 
-<div class="text-center mt-5 p-5">
+<div class="mt-5 p-5">
 	<form method="post" action="{{ route('venda_add') }}">
 		@csrf
+
+		<h4>Cliente:</h4>
 		<select name="id_usuario" class="form-control">
         @foreach ($usuario as $u)
         <option value="{{ $u->id}}">{{$u->nome}}</option>
         @endforeach
-    	</select>
+		</select>
 		<br>
+
+		<h4>Produto:</h4>
+		<select name="id_produto" class="form-control">
+        @foreach ($produto as $p)
+        <option value="{{ $p->id}}">{{$p->nome}}</option>
+        @endforeach
+		</select>
+		<br>
+
+		<h4>Valor:</h4>
 		<input type="number" step="0.01" class="form-control" name="valor" placeholder="Valor">
 		<br>
 		<input type="submit" class="btn btn-success btn-lg btn-block" value="Cadastrar">

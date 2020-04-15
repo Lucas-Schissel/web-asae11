@@ -10,17 +10,19 @@ use App\Produto;
 class VendaController extends Controller
 {
     function telaCadastro(){
-        $cliente = Cliente::all();
-
-        return view ("tela_vendas",
-            ["usuario"=>$cliente]);
+		$cliente = Cliente::all();
+		$produto = Produto::all();
+		return view ("tela_vendas",["produto"=>$produto],["usuario"=>$cliente]);
+		
     }
 	
     function adicionar(Request $req){
     	$valor = $req->input('valor');
-        $id_usuario = $req->input('id_usuario');
+		$id_usuario = $req->input('id_usuario');
+		$id_produto = $req->input('id_produto');
     	
-    	$cli = new Venda();
+		$cli = new Venda();
+		$cli->id_produto = $id_produto;
     	$cli->id_usuario = $id_usuario;
     	$cli->valor = $valor;
     	

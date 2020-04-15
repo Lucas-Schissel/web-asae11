@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProdutos extends Migration
+class AdicionaForeignKeyTableVendas extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class CreateProdutos extends Migration
      */
     public function up()
     {
-        Schema::create('produtos', function (Blueprint $table) {
-            $table->id('id');
-            $table->string("nome",255);
-            $table->timestamps();
+        Schema::table('vendas', function (Blueprint $table) {
+            $table->foreign('id_produto')->references('id')->on('produtos');
         });
     }
 
@@ -27,6 +25,8 @@ class CreateProdutos extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('produtos');
+        Schema::table('vendas', function (Blueprint $table) {
+            //
+        });
     }
 }

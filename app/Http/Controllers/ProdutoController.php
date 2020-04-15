@@ -64,12 +64,16 @@ class ProdutoController extends Controller
 
         if (session()->has("login")){
             $pdr = Produto::all();
-
             return view("lista_produtos", [ "us" => $pdr ]);
             
 		}else{
             return view('tela_login');
         }
         
+    }
+
+    function nomes(){
+        $n = Produto::pluck('nome','id');
+        return view('tela_vendas')->with('tipos', $n);
     }
 }

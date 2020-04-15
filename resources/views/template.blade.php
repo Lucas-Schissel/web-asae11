@@ -11,10 +11,9 @@
 <body>
  <div class= "container-fluid">
      <div class= "row">
+
 			<nav class= "navbar-expand-lg navbar navbar-dark bg-dark w-100">
-
-			  <a class= "navbar-brand" href="#">MENU</a>
-
+				
 			  <button class= "navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			  <span class="material-icons"></span>
 			  </button>
@@ -85,7 +84,7 @@
 			<div class = "col-md-2">
 				<!-- coluna vazia esquerda -->
 			</div>
-			<div id="conteudo" class = "col-md-8 mt-3 p-3">
+			<div id="conteudo" class = "col-md-8 mt-3">
 				@yield('conteudo')
 			</div>
 			<div class         = "col-md-2">

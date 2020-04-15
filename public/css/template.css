@@ -11,11 +11,9 @@
 }
 .dropdown-menu{
    background: #5A6268;
-text-decoration-color: #fff;
 }
 
 #conteudo{
     border: 2px solid #5A6268;;
     border-radius: 5px;
-    margin: 5px;
 }

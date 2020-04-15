@@ -70,9 +70,16 @@ class ClienteController extends Controller
     }
 
     function listar(){
-        $cli = Cliente::all();
 
-        return view("lista", [ "us" => $cli ]);
+        if (session()->has("login")){
+            $cli = Cliente::all();
+
+            return view("lista", [ "us" => $cli ]);
+            
+		}else{
+            return view('tela_login');
+        }
+        
     }
 
     function nomes(){

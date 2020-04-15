@@ -18,17 +18,17 @@
 			</div>
 			<div class="col-md-8 mt-3">		
 			
-			<form method="post" action="{{ route('logar') }}">
-				@csrf
-				<input type="text" name="login" placeholder="Login..." required>
-				<br><br>
-				<input type="password" name="senha" placeholder="Senha..." required>
-				<br><br>
-				<input type="submit"  value="Logar">
-				<br><br>
-			</form>
+				<form method="post" action="{{ route('logar') }}">
+					@csrf
+					<input type="text" name="login" placeholder="Login..." required>
+					<br><br>
+					<input type="password" name="senha" placeholder="Senha..." required>
+					<br><br>
+					<input class="btn btn-success btn-lg" style="width:300px" type="submit"  value="Logar">
+					<br><br>
+				</form>
 
-			<a class="btn btn-primary" href="{{ route('usuario_cadastro') }}">Cadastrar-se</a>
+			<a class="btn btn-primary btn-lg" style="width:300px" href="{{ route('usuario_cadastro') }}">Cadastrar-se</a>
 
 			</div>
 			<div class="col-md-2 mt-2">

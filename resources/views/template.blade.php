@@ -18,7 +18,7 @@
 					<ul class="navbar-nav">
 
 					<li class="nav-item">
-						<a class="nav-link" href="{{route('tela_login')}}">Logout</a>
+						<a class="nav-link" href="{{route('logout')}}">Logout</a>
 					</li>
 					
 					<li class="nav-item">

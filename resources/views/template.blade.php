@@ -9,7 +9,7 @@
 	<div class="container-fluid">
 		<div class="row">
 			<nav class="navbar-expand-lg navbar navbar-dark bg-dark w-100">
-			  <a class="navbar-brand" href="#">Navbar</a>
+			  <a class="navbar-brand" href="#">MENU</a>
 			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			    <span class="navbar-toggler-icon"></span>
 			  </button>
@@ -18,15 +18,15 @@
 					<ul class="navbar-nav">
 
 					<li class="nav-item">
-						<a class="nav-link" href="{{route('tela_login')}}">Logar</a>
+						<a class="nav-link" href="{{route('tela_login')}}">Logout</a>
 					</li>
 					
 					<li class="nav-item">
-						<a class="nav-link" href="{{route('usuario_cadastro')}}">Cadastrar</a>
+						<a class="nav-link" href="{{route('usuario_cadastro')}}">Cadastrar Cliente</a>
 					</li>
 					
 					<li class="nav-item">
-						<a class="nav-link" href="{{route('listar')}}">ListarClientes</a>
+						<a class="nav-link" href="{{route('listar')}}">Listar Clientes</a>
 					</li>
 
 					<li class="nav-item">

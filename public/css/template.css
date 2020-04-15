@@ -16,4 +16,10 @@
 #conteudo{
     border: 2px solid #5A6268;;
     border-radius: 5px;
+   
+}
+
+.table-overflow{
+    max-height:400px;
+    overflow-y:auto;
 }

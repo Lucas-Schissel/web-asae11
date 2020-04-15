@@ -26,6 +26,7 @@
 
 							<button class= "btn btn-secondary" type="button" data-toggle="dropdown">
 								Aplicaçao
+								<i class="icon-snowflake-o"></i>
 							</button>
 
 							<div class= "dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -48,11 +49,13 @@
 
 							<div class= "dropdown-menu" aria-labelledby="dropdownMenuButton">
 								<a class= "dropdown-item" href="{{route('listar')}}">
+								<i class="icon-th-list"></i>
 								Listar
 								</a>
 							<div class= "dropdown-divider"></div>
 								<a class= "dropdown-item" href="{{route('usuario_cadastro')}}">
-								Cadastrar
+								<i class="icon-pencil"></i>
+								Cadastrar								
 								</a>
 							</div>
 
@@ -69,8 +72,8 @@
 
 							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 								<a class="dropdown-item" href="{{route('venda_cadastro')}}">
-								Vender
 								<i class="icon-cart-plus"></i>
+								Vender
 								</a>
 							</div>
 

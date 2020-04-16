@@ -60,7 +60,7 @@ class ProdutoController extends Controller
             } else {
                 echo  "<script>alert('Produto $id nao foi excluído!!!');</script>";
             }
-            ProdutoController::listar();
+            return ProdutoController::listar();
         }else{
             return view('tela_login');
         }
@@ -69,7 +69,6 @@ class ProdutoController extends Controller
     }
 
     function listar(){
-
         if (session()->has("login")){
             $pdr = Produto::all();
             return view("lista_produtos", [ "us" => $pdr ]);
@@ -77,7 +76,6 @@ class ProdutoController extends Controller
 		}else{
             return view('tela_login');
         }
-        
     }
 
 }

@@ -3,8 +3,6 @@
 
 <h2>Vendas do usuario: {{ $cliente->nome}}</h2>
 
-@if (count($cliente->vendas) >0)
-
     <div class="table-overflow">
 
         <table class="table table-bordered table-hover mt-2">
@@ -49,11 +47,5 @@
         }
         
     </script>
-
-@else
-    <div class="alert alert-danger">
-        <h3> Usuario nao possui vendas </h3>
-    </div>
-@endif
 
 @endsection

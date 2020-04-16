@@ -10,39 +10,49 @@
 </head>
 <body>
 
-<div class="container mt-4 text-center">
-    <h2>Cadastro de Clientes</h2>
-    <div class="row">
-        <div class="col-md-2 mt-2"></div>
+<div class="row d-flex justify-content-center">
+		<h3>
+			Cadastro de Clientes
+			<i class="icon-download"></i>
+		</h3>
 
-        <div  class="col-md-8 mt-2">
+</div>
+
+<div class="container mt-5 text-center">
+    <div class="row">
+
+        <div class="col-md-2 mt-2">
+			<!-- coluna vazia esquerda -->
+		</div>
+
+        <div  class="col-md-8 mt-3 p-5">
 
 			<form method="post" action="{{ route('usuario_add') }}">
-			@csrf
-
-				<<div>
-									
-					<input type="text" class="form-control" name="nome" placeholder="Nome" required>
-					<br>
-					<input type="text" class="form-control" name="login" placeholder="Login" required>
-					<br>
-					<input type="password" class="form-control" name="senha" placeholder="Senha" required>
-					<br>
-  
-					 <input type="submit" class="btn btn-success btn-lg btn-block" value="Confirmar">
-
-				</div>
-                                  
+			@csrf							
+					<input type="text"  name="nome" placeholder="Digite um Nome . . ." required>
+					<br><br>
+					<input type="text"  name="login" placeholder="Digite um Login . . ." required>
+					<br><br>
+					<input type="password"  name="senha" placeholder="Digite uma Senha . . ." required>
+					<br><br>
+					<button class="btn btn-success btn-lg" style="width:250px" type="submit">
+					 Cadastrar
+					<i class="icon-ok-circled2"></i>
+					</button>	
+					<br><br>				 
 			<form>  
 
         </div>
 			
-		<div class="col-md-2 mt-2"></div>
+		<div class="col-md-2 mt-2">
+			<!-- coluna vazia direita -->
+		</div>
+
 	</div>
 </div> 
 
 <script type="text/javascript">
-        document.tela_cadastro_cliente_externo.reset();
+        document.tela_cadastro_cliente.reset();
 </script>
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

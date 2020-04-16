@@ -8,13 +8,18 @@ use App\Cliente;
 class ClienteController extends Controller
 {
     function telaCadastro(){
+        if (session()->has("login")){
+            session()->forget("login");
+        }
     	return view("tela_cadastro_cliente");
     }
 
     function telaAlteracao($id){
-        $cli = Cliente::find($id);
-
-        return view("tela_alterar_cliente", [ "u" => $cli ]);
+        if (session()->has("login")){
+            $cli = Cliente::find($id);
+            return view("tela_alterar_cliente", [ "u" => $cli ]);
+        }
+        return view('tela_login');
     }
 
     function adicionar(Request $req){
@@ -31,7 +36,8 @@ class ClienteController extends Controller
     		$msg = "Cliente $nome adicionado com sucesso.";
     	} else {
     		$msg = "Cliente não cadastrado.";
-    	}
+        }
+         $func = "";
 
         return view("resultado", [ "mensagem" => $msg]);
     }
@@ -52,40 +58,33 @@ class ClienteController extends Controller
         } else {
             $msg = "Cliente não foi alterado.";
         }
-
         return view("resultado", [ "mensagem" => $msg]);
     }
 
     function excluir($id){
-        $cli = Cliente::find($id);
+        if (session()->has("login")){
+                $cli = Cliente::find($id);
+                if ($cli->delete()){
+                    $msg = "Usuário $id excluído com sucesso.";
+                } else {
+                    $msg = "Usuário não foi excluído.";
+                }
 
-        if ($cli->delete()){
-            $msg = "Usuário $id excluído com sucesso.";
-        } else {
-            $msg = "Usuário não foi excluído.";
+                return view("resultado", [ "mensagem" => $msg]);
+        }else{
+        return view('tela_login');
         }
-
-        return view("resultado", [ "mensagem" => $msg]);
     
     }
 
     function listar(){
-
         if (session()->has("login")){
             $cli = Cliente::all();
-
             return view("lista", [ "us" => $cli ]);
-            
 		}else{
             return view('tela_login');
         }
         
     }
-
-    function nomes(){
-        $n = Cliente::pluck('nome','id');
-        return view('tela_vendas')->with('tipos', $n);
-    }
-   
 
 }

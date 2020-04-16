@@ -24,7 +24,7 @@
 			<div class="col-md-2 mt-2">
 				<!-- coluna vazia esquerda -->
 			</div>
-			<div class="col-md-8 mt-3 p-3">		
+			<div class="col-md-8 mt-3 p-5">		
 			
 				<form method="post" action="{{ route('logar') }}">
 					@csrf
@@ -57,7 +57,11 @@
 		  	ASAE-11 Lucas Schissel
 	  		<i class="icon-graduation-cap"></i>
 	  </h3>
-    </footer> 
+	</footer> 
+	
+	<script type="text/javascript">
+        document.tela_login.reset();
+	</script>
 
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

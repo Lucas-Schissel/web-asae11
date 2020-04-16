@@ -72,8 +72,15 @@ class ProdutoController extends Controller
         
     }
 
+    function  produtoPorVenda($id){
+		$produto = Produto::find($id);
+        return view('lista_vendas',["produto"=>$produto]);
+    }
+
     function nomes(){
         $n = Produto::pluck('nome','id');
         return view('tela_vendas')->with('tipos', $n);
     }
+
+
 }

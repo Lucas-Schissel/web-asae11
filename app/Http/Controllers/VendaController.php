@@ -45,7 +45,8 @@ class VendaController extends Controller
     }
 
     function  vendasPorCliente($id){
-        $cli = Cliente::find($id);
-        return view('lista_vendas', ["cliente" => $cli]);
+		$cli = Cliente::find($id);
+		$produto = Produto::all();
+        return view('lista_vendas',["produto"=>$produto],["cliente" => $cli]);
     }
 }

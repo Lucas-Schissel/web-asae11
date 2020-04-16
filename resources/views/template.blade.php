@@ -28,12 +28,18 @@
 								Aplicaçao
 								<i class="icon-snowflake-o"></i>
 							</button>
-
+							
 							<div class= "dropdown-menu" aria-labelledby="dropdownMenuButton">
+								<a class= "dropdown-item" href="{{route('menu')}}"> 
+								Menu
+								<i class="icon-home"></i>
+								</a>
+								<div class= "dropdown-divider"></div>
 								<a class= "dropdown-item" href="{{route('logout')}}"> 
 								Logout
 								<i class="icon-logout"></i>
 								</a>
+								
 							</div>
 
 					 </div>
@@ -116,7 +122,7 @@
 			<div id="conteudo" class = "col-md-8 mt-3">
 				@yield('conteudo')
 			</div>
-			<div class         = "col-md-2">
+			<div class = "col-md-2">
 				<!-- coluna vazia direita -->
 			</div>
 		</div>

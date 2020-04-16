@@ -1,37 +1,59 @@
 @extends('template')
-
 @section('conteudo')
-<h1>Vendas do usuario {{ $cliente->nome}}</h1>
+
+<h2>Vendas do usuario: {{ $cliente->nome}}</h2>
+
 @if (count($cliente->vendas) >0)
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>ID Venda</th>
-            <th>Valor</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach($cliente->vendas as $v)
-        <tr>
-            <td>{{$v->id}}</td>
-            <td>{{$v->valor}}</td>
-            <td>
-			    <a class="btn btn-danger" href="#" onclick="exclui({{ $v->id }})">Excluir</a>
-			</td>
-        </tr>
-        @endforeach
-    </tbody>
-</table>
-<script>
-	function exclui(id){
-		if (confirm("Deseja excluir a venda de id: " + id + "?")){
-			location.href = "/venda/excluir/" + id;
-		}
-	}
-</script>
+
+    <div class="table-overflow">
+
+        <table class="table table-bordered table-hover mt-2">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Valor</th>
+                    <th>Açoes</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($cliente->vendas as $v)
+                <tr>
+                    <td>{{$v->id}}</td>
+                    @foreach ($produto as $p)
+                    @if ($v->id_produto == $p->id)
+                    <td>               
+                        {{$p->nome }}                
+                    </td>
+                    @endif
+                    @endforeach
+                    <td>{{$v->valor}}</td>
+                    <td>
+                        <a class="btn btn-danger" href="#" onclick="exclui({{ $v->id }})">
+                        Excluir
+                        <i class="icon-trash-empty"></i>
+                        </a>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+
+    </div>
+
+    <script>
+        function exclui(id){
+            if (confirm("Deseja excluir a venda de id: " + id + "?")){
+                location.href = "/venda/excluir/" + id;
+            }
+        }
+        
+    </script>
+
 @else
-<div class="alert alert-danger">
-   <h3> Usuario nao possui vendas </h3>
-</div>
+    <div class="alert alert-danger">
+        <h3> Usuario nao possui vendas </h3>
+    </div>
 @endif
+
 @endsection

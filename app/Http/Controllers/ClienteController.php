@@ -34,12 +34,10 @@ class ClienteController extends Controller
 
     	if ($cli->save()){
             echo  "<script>alert('Cliente $nome cadastrado com Sucesso!');</script>";
-            return view('tela_login');
     	} else {
     		echo  "<script>alert('Cliente $nome nao foi cadastrado!');</script>";
-            return view('tela_login');
         }
-
+        return view('tela_login');
     }
 
     function alterar(Request $req, $id){
@@ -54,23 +52,23 @@ class ClienteController extends Controller
         $cli->senha = $senha;
 
         if ($cli->save()){
-            $msg = "Cliente $nome alterado com sucesso.";
+            echo  "<script>alert('Cliente $nome alterado com sucesso');</script>";
         } else {
-            $msg = "Cliente não foi alterado.";
+            echo  "<script>alert('Cliente $nome nao foi alterado!');</script>";
         }
-        return view("resultado", [ "mensagem" => $msg]);
+        return  ClienteController::listar();
     }
 
     function excluir($id){
         if (session()->has("login")){
                 $cli = Cliente::find($id);
                 if ($cli->delete()){
-                    $msg = "Usuário $id excluído com sucesso.";
+                    echo  "<script>alert('Cliente $id excluído com sucesso');</script>";
                 } else {
-                    $msg = "Usuário não foi excluído.";
+                    echo  "<script>alert('Cliente $id nao foi excluído!!!');</script>";
                 }
 
-                return view("resultado", [ "mensagem" => $msg]);
+                return  ClienteController::listar();
         }else{
         return view('tela_login');
         }

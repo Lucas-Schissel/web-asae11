@@ -8,7 +8,10 @@ use App\Cliente;
 class AppController extends Controller
 {
 	function menu(){
+		if (session()->has("login")){
 		return view("resultado", ["mensagem" => "Bem Vindo"]);
+		}
+		return view('tela_login');
 	}
 
     function tela_login(){
@@ -40,14 +43,7 @@ class AppController extends Controller
 
 	function logout(){
 		session()->forget("login");
-		return view('tela_login');
+		return redirect()->route('tela_login');
 	}
 
-	static function verifica(){
-		if (session()->has("login")){
-			return redirect()->route('menu');
-		}
-			return view('tela_login');
-		
-	}
 }

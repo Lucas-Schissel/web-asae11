@@ -1,7 +1,7 @@
 @extends('template')
 
 @section('conteudo')
-<div class="text-center">
+<div class="text-center p-5">
 	<h1>Alteração de usuário</h1>
 	<form method="post" action="{{ route('usuario_alterar', ['id' => $u->id]) }}">
 		@csrf

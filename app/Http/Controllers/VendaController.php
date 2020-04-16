@@ -30,19 +30,27 @@ class VendaController extends Controller
     	
 
     	if ($cli->save()){
-    		$msg = "Venda efetuada com sucesso.";
+			echo  "<script>alert('Venda efetuada com Sucesso!');</script>";
     	} else {
-    		$msg = "Venda nao efetuada.";
+    		echo  "<script>alert('Venda nao efetuada!');</script>";
     	}
-
-        return view("resultado", [ "mensagem" => $msg]);
+        return VendaController::telaCadastro();
 	}
 	
 	function excluir($id){
-		$vnd = Venda::find($id);
-		$vnd->delete();
-		
-		return 	VendaController::vendasPorCliente($id);
+		if (session()->has("login")){
+			$vnd = Venda::find($id);
+
+			if ($vnd->delete()){
+                echo  "<script>alert('Venda $id excluída com sucesso');</script>";
+            } else {
+                echo  "<script>alert('Venda $id nao foi excluída!!!');</script>";
+            }				
+			return 	VendaController::vendasPorCliente($id);
+
+		}else{
+            return view('tela_login');
+        }
   
     }
 

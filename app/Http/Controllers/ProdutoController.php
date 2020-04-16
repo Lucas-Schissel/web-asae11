@@ -29,12 +29,11 @@ class ProdutoController extends Controller
     	$pdr->nome = $nome;
 
     	if ($pdr->save()){
-    		$msg = "Produto $nome adicionado com sucesso.";
+            echo  "<script>alert('Produto $nome adicionado com Sucesso!');</script>";
     	} else {
-    		$msg = "Produto não cadastrado.";
+            echo  "<script>alert('Produto $nome nao foi adicionado!!!');</script>";
     	}
-
-        return view("resultado", [ "mensagem" => $msg]);
+        return ProdutoController::telaCadastro();
     }
 
     function alterar(Request $req, $id){
@@ -44,25 +43,29 @@ class ProdutoController extends Controller
         $pdr->nome = $nome;
       
         if ($pdr->save()){
-            $msg = "Produto $nome alterado com sucesso.";
+            echo  "<script>alert('Produto $nome alterado com Sucesso!');</script>";
         } else {
-            $msg = "Produto não foi alterado.";
+            echo  "<script>alert('Produto $nome nao foi alterado!!!');</script>";
         }
 
-        return view("resultado", [ "mensagem" => $msg]);
+        return ProdutoController::listar();
     }
 
     function excluir($id){
-        $pdr = Produto::find($id);
+        if (session()->has("login")){
+            $pdr = Produto::find($id);
 
-        if ($pdr->delete()){
-            $msg = "Produto $id excluído com sucesso.";
-        } else {
-            $msg = "Produto não foi excluído.";
+            if ($pdr->delete()){
+                echo  "<script>alert('Produto $id excluído com sucesso');</script>";
+            } else {
+                echo  "<script>alert('Produto $id nao foi excluído!!!');</script>";
+            }
+            ProdutoController::listar();
+        }else{
+            return view('tela_login');
         }
 
-        return view("resultado", [ "mensagem" => $msg]);
-    
+
     }
 
     function listar(){

@@ -8,13 +8,18 @@ use App\Produto;
 class ProdutoController extends Controller
 {
     function telaCadastro(){
-    	return view("tela_cadastro_produto");
+        if (session()->has("login")){
+            return view("tela_cadastro_produto");
+        }
+        return view('tela_login');
     }
 
     function telaAlteracao($id){
-        $pdr = Produto::find($id);
-
-        return view("tela_alterar_produto", [ "u" => $pdr ]);
+        if (session()->has("login")){
+            $pdr = Produto::find($id);
+            return view("tela_alterar_produto", [ "u" => $pdr ]);
+        }
+        return view('tela_login');
     }
 
     function adicionar(Request $req){
@@ -71,11 +76,5 @@ class ProdutoController extends Controller
         }
         
     }
-
-    function nomes(){
-        $n = Produto::pluck('nome','id');
-        return view('tela_vendas')->with('tipos', $n);
-    }
-
 
 }

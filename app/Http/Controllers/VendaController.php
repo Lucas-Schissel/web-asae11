@@ -10,10 +10,12 @@ use App\Produto;
 class VendaController extends Controller
 {
     function telaCadastro(){
-		$cliente = Cliente::all();
-		$produto = Produto::all();
-		return view ("tela_vendas",["produto"=>$produto],["usuario"=>$cliente]);
-		
+		if (session()->has("login")){
+			$cliente = Cliente::all();
+			$produto = Produto::all();
+			return view ("tela_vendas",["produto"=>$produto],["usuario"=>$cliente]);
+		}
+			return view('tela_login');		
     }
 	
     function adicionar(Request $req){
@@ -45,17 +47,23 @@ class VendaController extends Controller
     }
 
     function vendasPorCliente($id){
-		$cli = Cliente::find($id);
-		$produto = Produto::all();
-        return view('lista_vendas',["produto"=>$produto],["cliente" => $cli]);
+		if (session()->has("login")){
+			$cli = Cliente::find($id);
+			$produto = Produto::all();
+       		return view('lista_vendas',["produto"=>$produto],["cliente" => $cli]);
+		}
+		return view('tela_login');
 	}
 
 	function todasVendas(){
-		$vendas = Venda::all();
-		$produto = Produto::all();
-		$cliente = Cliente::all();
-		return view('lista_todas_vendas')->with(compact('produto','cliente','vendas'));
+		if (session()->has("login")){
+			$vendas = Venda::all();
+			$produto = Produto::all();
+			$cliente = Cliente::all();
+			return view('lista_todas_vendas')->with(compact('produto','cliente','vendas'));
+		}
+		return view('tela_login');
 	}
-	
+
 
 }

@@ -8,7 +8,7 @@ use App\Cliente;
 class AppController extends Controller
 {
 	function menu(){
-		if (session()->has("login")){
+		if (session()->has("login")){			
 		return view("resultado", ["mensagem" => "Bem Vindo"]);
 		}
 		return view('tela_login');

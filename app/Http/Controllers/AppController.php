@@ -33,7 +33,8 @@ class AppController extends Controller
 
     		return redirect()->route('menu');
     	} else {
-			return view("resultado", ["mensagem" => "Usuário ou senha inválidos. Tente cadastrar um usuario"]);
+			echo  "<script>alert('Usuário ou senha inválidos. Tente cadastrar um usuario');</script>";
+            return view('tela_login');
     	}
 	}
 

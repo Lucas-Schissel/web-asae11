@@ -33,13 +33,13 @@ class ClienteController extends Controller
     	$cli->senha = $senha;
 
     	if ($cli->save()){
-    		$msg = "Cliente $nome adicionado com sucesso.";
+            echo  "<script>alert('Cliente $nome cadastrado com Sucesso!');</script>";
+            return view('tela_login');
     	} else {
-    		$msg = "Cliente não cadastrado.";
+    		echo  "<script>alert('Cliente $nome nao foi cadastrado!');</script>";
+            return view('tela_login');
         }
-         $func = "";
 
-        return view("resultado", [ "mensagem" => $msg]);
     }
 
     function alterar(Request $req, $id){

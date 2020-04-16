@@ -16,6 +16,7 @@ input[type=text],input[type=password]{
 ::-webkit-input-placeholder {
   color: darkgrey;
   font-size: 75%;
+}
 
 body{
   background-image: url("/imagens/background.jpg");

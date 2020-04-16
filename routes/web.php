@@ -54,6 +54,9 @@ Route::get('/venda/excluir/{id}', 'VendaController@excluir')
 Route::get('venda/cliente/{id}', 'VendaController@vendasPorCliente')
 	->name('vendas_cliente');
 
+Route::get('venda/total/', 'VendaController@todasVendas')
+	->name('vendas_total');
+
 //Produtos
 
 Route::get('/produto/cadastro', 'ProdutoController@telaCadastro')

@@ -77,12 +77,18 @@
 							</button>
 
 							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+								<a class= "dropdown-item" href="{{route('vendas_total')}}">
+								<i class="icon-th-list"></i>
+								Listar
+								</a>
+							<div class= "dropdown-divider"></div>	
 								<a class="dropdown-item" href="{{route('venda_cadastro')}}">
 								<i class="icon-cart-plus"></i>
 								Vender
 								</a>
 							</div>
 
+							
 					 </div>
 					</li>
 
